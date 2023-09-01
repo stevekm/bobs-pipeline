@@ -6,7 +6,7 @@ workflow {
     samples_ch = Channel.from(file(params.samplesheet))
         .splitCsv(header:true, sep: ',')
         .map{ row ->
-            def meta = ["id": row.name]
+            def meta = ["id": row.name, "orderName": row.order]
             return [ meta, file(row.file)]
         }
 

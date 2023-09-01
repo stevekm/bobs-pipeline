@@ -9,7 +9,7 @@ process ADD_BOTTOM_BUN {
     tuple val(meta), path(output_file), emit: sandwiches
 
     script:
-    output_file = "${meta.id}.burger.txt"
+    output_file = "${meta.id}.${meta.orderName}.burger.txt"
     """
     cat "${input_sandwich}" > "${output_file}"
     printf '\\__________________________/

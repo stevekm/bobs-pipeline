@@ -1,7 +1,7 @@
-name,file
-Bob,data/empty.txt
-Linda,data/empty.txt
-Tina,data/empty.txt
-Gene,data/empty.txt
-Louise,data/empty.txt
+name,order,file
+Bob,Tunami,data/empty.txt
+Linda,ChardToACrisp,data/empty.txt
+Tina,SweatyPalms,data/empty.txt
+Gene,Beefsquatch,data/empty.txt
+Louise,SuperLeek,data/empty.txt
 
