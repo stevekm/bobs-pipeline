@@ -1,7 +1,15 @@
-params.outdir = "output"
+nextflow.enable.dsl=2
 
-include { MAKE_HAMBURGER } from './workflows/hamburger.nf'
+include { MAKE_HAMBURGERS } from './workflows/hamburger.nf'
 
 workflow {
-    MAKE_HAMBURGER(Channel.from(file("empty.txt")))
+    samples_ch = Channel.from(file(params.samplesheet))
+        .splitCsv(header:true, sep: ',')
+        .map{ row ->
+            def meta = ["id": row.name]
+            return [ meta, file(row.file)]
+        }
+
+    MAKE_HAMBURGERS(samples_ch)
+    MAKE_HAMBURGERS.out.hamburgers.view()
 }

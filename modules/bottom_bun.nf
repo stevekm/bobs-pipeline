@@ -1,14 +1,15 @@
 process ADD_BOTTOM_BUN {
+    tag "${meta.id}"
     publishDir "${params.outdir}", mode: "copy", overwrite: true
 
     input:
-    path(input_sandwich)
+    tuple val(meta), path(input_sandwich)
 
     output:
-    path(output_file), emit: sandwich
+    tuple val(meta), path(output_file), emit: sandwiches
 
     script:
-    output_file = "hamburger.txt"
+    output_file = "${meta.id}.burger.txt"
     """
     cat "${input_sandwich}" > "${output_file}"
     printf '\\__________________________/

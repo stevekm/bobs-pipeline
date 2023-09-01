@@ -1,12 +1,14 @@
 process ADD_CHEESE {
+    tag "${meta.id}"
+
     input:
-    path(input_sandwich)
+    tuple val(meta), path(input_sandwich)
 
     output:
-    path(output_file), emit: sandwich
+    tuple val(meta), path(output_file), emit: sandwiches
 
     script:
-    output_file = "with_cheese.txt"
+    output_file = "${meta.id}.with_cheese.txt"
     """
     cat "${input_sandwich}" > "${output_file}"
     printf '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

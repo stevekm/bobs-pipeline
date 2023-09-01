@@ -1,12 +1,14 @@
-process ADD_BURGER {
+process ADD_BURGER_PATTY {
+    tag "${meta.id}"
+
     input:
-    path(input_sandwich)
+    tuple val(meta), path(input_sandwich)
 
     output:
-    path(output_file), emit: sandwich
+    tuple val(meta), path(output_file), emit: sandwiches
 
     script:
-    output_file = "with_burger.txt"
+    output_file = "${meta.id}.with_patty.txt"
     """
     cat "${input_sandwich}" > "${output_file}"
     printf '(~~~~~~~~~~~~~~~~~~~~~~~~~~~)
