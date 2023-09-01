@@ -1,5 +1,7 @@
 # Example Nextflow Pipeline
 
+- requires `docker` to be installed for container usage
+
 Usage
 
 ```
