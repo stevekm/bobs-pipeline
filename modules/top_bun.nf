@@ -10,6 +10,7 @@ process ADD_TOP_BUN {
     script:
     output_file = "${meta.id}.sandwich.txt"
     """
+    cat "${input}" > "${output_file}"
     printf '/¯¯`¯¯`¯¯¯`¯¯`¯¯¯`¯¯¯`¯¯`¯¯¯\\\\
     ' > "${output_file}"
     """
