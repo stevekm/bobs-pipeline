@@ -1,0 +1,7 @@
+name,order,file
+Bob,Tunami,s3://my-bucket/stevekm/pipelines/bobs-pipeline/data/empty.txt
+Linda,ChardToACrisp,s3://my-bucket/stevekm/pipelines/bobs-pipeline/data/empty.txt
+Tina,SweatyPalms,s3://my-bucket/stevekm/pipelines/bobs-pipeline/data/empty.txt
+Gene,Beefsquatch,s3://my-bucket/stevekm/pipelines/bobs-pipeline/data/empty.txt
+Louise,SuperLeek,s3://my-bucket/stevekm/pipelines/bobs-pipeline/data/empty.txt
+
